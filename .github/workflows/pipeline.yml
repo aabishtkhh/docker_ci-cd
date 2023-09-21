@@ -19,5 +19,9 @@ jobs: # this workflow has one job
       - name: Print Hello World
         run: echo "Hello world!"
 
-      
+      - name: Secret
+        env:
+          MY_SECRET: ${{ secrets.MY_SECRET }}
+       run: echo $MY_SECRET
+
 
