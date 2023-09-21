@@ -15,8 +15,8 @@ jobs: # this workflow has one job
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      - name: Print Hello World
-        run: ./run.sh
+      - name: Run Hello World
+        run: chmod +x run.sh && ./run.sh
         shell: bash
 
       - name: Secret
