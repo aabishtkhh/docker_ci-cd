@@ -16,7 +16,7 @@ jobs: # this workflow has one job
 
       # Runs a single command using the runners shell
       - name: Print Hello World
-        run: ./Aabish/NY/Source/docker_ci-cd/.github/workflows/run.sh
+        run: ./run.sh
         shell: bash
 
       - name: Secret
