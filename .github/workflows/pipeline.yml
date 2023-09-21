@@ -16,9 +16,7 @@ jobs: # this workflow has one job
         uses: actions/checkout@v2 # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 
       - name: Run Hello World
-        run: |
-          chmod +x script/run.sh
-          ./script/run.sh
+        run: chmod +x script/run.sh && ./script/run.sh
         shell: bash
 
       - name: Secret
