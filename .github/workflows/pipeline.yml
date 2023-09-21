@@ -8,12 +8,12 @@ on:
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
 
 jobs: # this workflow has one job
-  build:
-    runs-on: ubuntu-latest
-
   defaults:
     run:
       working-directory: ./script
+
+  build:
+    runs-on: ubuntu-latest
 
     steps: # sequence of tasks that will be executed
       - name: Checkout code
