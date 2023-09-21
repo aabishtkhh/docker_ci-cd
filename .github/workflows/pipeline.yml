@@ -3,26 +3,26 @@ name: Hello-World-Workflow
 # Controls when the workflow will run
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
 
 jobs: # this workflow has one job
   build:
     runs-on: ubuntu-latest
 
-  defaults:
-    run:
-      working-directory: ./script
+    steps: # sequence of tasks that will be executed
+      - name: Checkout code
+        uses: actions/checkout@v2 # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 
-    steps: # sequence of tasks that will be executed -- Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
-      # Runs a single command using the runners shell
       - name: Run Hello World
-        run: chmod +x run.sh && ./run.sh
+        run: |
+          chmod +x script/run.sh
+          ./script/run.sh
         shell: bash
 
       - name: Secret
         env:
           MY_SECRET: ${{ secrets.MY_SECRET }}
         run: echo $MY_SECRET
+
