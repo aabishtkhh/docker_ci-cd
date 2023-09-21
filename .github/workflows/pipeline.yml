@@ -10,9 +10,6 @@ on:
 jobs: # this workflow has one job
   build:
     runs-on: ubuntu-latest
-    
-    defaults:
-      working-directory: ./script
 
     steps: # sequence of tasks that will be executed
       - name: Checkout code
