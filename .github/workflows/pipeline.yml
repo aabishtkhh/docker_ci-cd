@@ -1,0 +1,23 @@
+name: Hello-World-Workflow
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: [ "main" ]
+
+  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
+
+jobs: # this workflow has one job
+  build:
+    runs-on: ubuntu-latest
+
+    steps: # sequence of tasks that will be executed
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs a single command using the runners shell
+      - name: Print Hello World
+        run: echo "Hello world!"
+
+      
+
