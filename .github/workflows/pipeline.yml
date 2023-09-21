@@ -1,10 +1,10 @@
+
 name: Hello-World-Workflow
 
 # Controls when the workflow will run
 on:
   push:
     branches: [ "main" ]
-
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
 
 jobs: # this workflow has one job
@@ -13,7 +13,7 @@ jobs: # this workflow has one job
 
   defaults:
     run:
-      working-directory: ./scripts
+      working-directory: ./script
 
     steps: # sequence of tasks that will be executed -- Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
