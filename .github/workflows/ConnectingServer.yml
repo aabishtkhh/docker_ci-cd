@@ -1,0 +1,24 @@
+name: Connect-to-the-remote-server
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: 
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Checkout code
+        uses: actions/checkout@v3 
+
+      - name: executing remote ssh commands using password   
+        uses: appleboy/ssh-action@ v1.0.0   
+        with:     
+          host: ${{ secrets.HOST }}     
+          username: ${{ secrets.USERNAME }}     
+          password: ${{ secrets.PASSWORD }}     
+          port: 22     
+          script: echo “Hello World” # executes commands
